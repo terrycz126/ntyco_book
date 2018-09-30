@@ -1,17 +1,10 @@
 {
-    "author": "li zhiyong<lizhiyong4360@gmail.com>",
-    "description": "这是开源的讲述协程的书籍",
-    "generator": "site",
-    "plugins" : [ "disqus", "collapsible-menu"],
-    "pluginsConfig": {
-        "disqus": {
-            "shortName": "0voice"
-        }
-    },
+    "gitbook": "2.x.x",
+    "plugins": [],
     "links": {
         "sidebar": {
             "ntyTcp": "http://www.0voice.com"
         }
     },
-    "title": "协程的原理与实现剖析"
+    "pluginsConfig": {}
 }
