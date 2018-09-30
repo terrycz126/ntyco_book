@@ -9,5 +9,5 @@ structure:
   summary: SUMMARY.md
 
 # Redirect urls to specific files (relative to the <root> directory)
-#redirects:
-  #previous/page: new-folder/page.md
+redirects:
+  previous/page: SUMMARY.md
