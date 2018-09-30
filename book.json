@@ -1,6 +1,13 @@
 {
     "gitbook": "2.x.x",
     "plugins": [],
+    "styles": {
+        "website": "styles/website.css",
+        "ebook": "styles/ebook.css",
+        "pdf": "styles/pdf.css",
+        "mobi": "styles/mobi.css",
+        "epub": "styles/epub.css"
+    },
     "links": {
         "sidebar": {
             "ntyTcp": "http://www.0voice.com"
