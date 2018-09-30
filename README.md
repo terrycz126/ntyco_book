@@ -1,2 +1,2 @@
-# Introduction
+# Initial page
 
