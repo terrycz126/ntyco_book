@@ -1,454 +1,476 @@
-
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="en" >
+    
     <head>
+        
         <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>前言 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
+        <title>介绍 | 协程</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="我们只听说过进程和线程，没有听说过协程，协程是个什么东西呢？我们的go语言，node.js语言的实现都使用到了协程，go的高效就不再细说了，那为什么使用了协程会让我们的后台程序变得高效呢？如果我们心里有这些疑问，那么请继续阅读本书和了解我们实现的开源库ntyco。">
+        <meta name="generator" content="GitBook 2.6.7">
         
         
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
         
-    
     <link rel="stylesheet" href="gitbook/style.css">
-
     
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
         
-
-    
-
-    
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
         
     
         
-    
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
         
     
         
-    
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
         
     
-        
     
 
         
     
     
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
-
-    
-    <link rel="next" href="chapter1/1_0.html" />
+    <link rel="next" href="./charpter0/index.html" />
     
     
 
+        
     </head>
     <body>
         
-<div class="book">
-    <div class="book-summary">
         
+    <div class="book"
+        data-level="0"
+        data-chapter-title="介绍"
+        data-filepath="README.md"
+        data-basepath="."
+        data-revision="Wed Oct 10 2018 15:56:02 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
             
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+            
+            
+                
+                <li>
+                    <a href="http://www.0voice.com" target="blank" class="custom-link">ntyTcp</a>
+                </li>
+            
+            
+
+            
+            <li class="divider"></li>
+            
+
+            
+    
+        <li class="chapter active" data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="charpter0/index.html">
+            
+                
+                    <a href="./charpter0/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        前言
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="chapter1/1_0.html">
+            
+                
+                    <a href="./chapter1/1_0.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        第一章 协程的起源
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="chapter2/2_0.html">
+            
+                
+                    <a href="./chapter2/2_0.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        第二章 协程的案例
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="chapter3/3_0.html">
+            
+                
+                    <a href="./chapter3/3_0.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        第三章 协程的实现之工作原理
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="chapter3/3_1.html">
+            
+                
+                    <a href="./chapter3/3_1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        创建协程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="chapter3/3_2.html">
+            
+                
+                    <a href="./chapter3/3_2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        实现IO异步操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="chapter3/3_3.html">
+            
+                
+                    <a href="./chapter3/3_3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        回调协程的子操作
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="chapter4/4_0.html">
+            
+                
+                    <a href="./chapter4/4_0.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        第四章 协程的实现之原语操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="chapter5/5_0.html">
+            
+                
+                    <a href="./chapter5/5_0.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        第五章 协程实现之切换
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="chapter6/6_0.html">
+            
+                
+                    <a href="./chapter6/6_0.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        第六章 协程实现之定义
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="chapter6/6_1.html">
+            
+                
+                    <a href="./chapter6/6_1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        运行体高效切换
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="chapter6/6_2.html">
+            
+                
+                    <a href="./chapter6/6_2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        调度器与协程的功能界限
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="chapter7/7_0.html">
+            
+                
+                    <a href="./chapter7/7_0.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        第七章 协程实现之调度器
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="chapter7/7_1.html">
+            
+                
+                    <a href="./chapter7/7_1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        生产者消费者模式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="chapter7/7_2.html">
+            
+                
+                    <a href="./chapter7/7_2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        多状态下运行
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="chapter8/8_0.html">
+            
+                
+                    <a href="./chapter8/8_0.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        第八章 协程性能测试
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="chapter9/9_0.html">
+            
+                
+                    <a href="./chapter9/9_0.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        第九章 协程多核模式
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
 </div>
 
-            
-                <nav role="navigation">
-                
-
-
-<ul class="summary">
-    
-    
-
-    
-
-    
-        
-        
-    
-        <li class="chapter active" data-level="1.1" data-path="./">
-            
-                <a href="./">
-            
-                    
-                    前言
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" data-path="chapter1/1_0.html">
-            
-                <a href="chapter1/1_0.html">
-            
-                    
-                    第一章 协程的起源
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" data-path="chapter2/2_0.html">
-            
-                <a href="chapter2/2_0.html">
-            
-                    
-                    第二章 协程的案例
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" data-path="chapter3/3_0.html">
-            
-                <a href="chapter3/3_0.html">
-            
-                    
-                    第三章 协程的实现之工作原理
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.4.1" data-path="chapter3/3_1.html">
-            
-                <a href="chapter3/3_1.html">
-            
-                    
-                    创建协程
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.2" data-path="chapter3/3_2.html">
-            
-                <a href="chapter3/3_2.html">
-            
-                    
-                    实现IO异步操作
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.3" data-path="chapter3/3_3.html">
-            
-                <a href="chapter3/3_3.html">
-            
-                    
-                    回调协程的子操作
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="chapter4/4_0.html">
-            
-                <a href="chapter4/4_0.html">
-            
-                    
-                    第四章 协程的实现之原语操作
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6" data-path="chapter5/5_0.html">
-            
-                <a href="chapter5/5_0.html">
-            
-                    
-                    第五章 协程实现之切换
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7" data-path="chapter6/6_0.html">
-            
-                <a href="chapter6/6_0.html">
-            
-                    
-                    第六章 协程实现之定义
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.7.1" data-path="chapter6/6_1.html">
-            
-                <a href="chapter6/6_1.html">
-            
-                    
-                    运行体高效切换
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.2" data-path="chapter6/6_2.html">
-            
-                <a href="chapter6/6_2.html">
-            
-                    
-                    调度器与协程的功能界限
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8" data-path="chapter7/7_0.html">
-            
-                <a href="chapter7/7_0.html">
-            
-                    
-                    第七章 协程实现之调度器
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.8.1" data-path="chapter7/7_1.html">
-            
-                <a href="chapter7/7_1.html">
-            
-                    
-                    生产者消费者模式
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.2" data-path="chapter7/7_2.html">
-            
-                <a href="chapter7/7_2.html">
-            
-                    
-                    多状态下运行
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9" data-path="chapter8/8_0.html">
-            
-                <a href="chapter8/8_0.html">
-            
-                    
-                    第八章 协程性能测试
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.10" data-path="chapter9/9_0.html">
-            
-                <a href="chapter9/9_0.html">
-            
-                    
-                    第九章 协程多核模式
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
-        </a>
-    </li>
-</ul>
-
-
-                </nav>
-            
-        
-    </div>
-
     <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
-
-<div class="book-header" role="navigation">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
     
 
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >前言</a>
+        <a href="./" >协程</a>
     </h1>
 </div>
 
-
-
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <h1 id="introduction">Introduction</h1>
-
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
-</div>
-
-                        </div>
-                    </div>
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
                 
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="&#x534F;&#x7A0B;">&#x534F;&#x7A0B;</h2>
+<p>&#x6211;&#x4EEC;&#x53EA;&#x542C;&#x8BF4;&#x8FC7;&#x8FDB;&#x7A0B;&#x548C;&#x7EBF;&#x7A0B;&#xFF0C;&#x6CA1;&#x6709;&#x542C;&#x8BF4;&#x8FC7;&#x534F;&#x7A0B;&#xFF0C;&#x534F;&#x7A0B;&#x662F;&#x4E2A;&#x4EC0;&#x4E48;&#x4E1C;&#x897F;&#x5462;&#xFF1F;&#x6211;&#x4EEC;&#x7684;go&#x8BED;&#x8A00;&#xFF0C;node.js&#x8BED;&#x8A00;&#x7684;&#x5B9E;&#x73B0;&#x90FD;&#x4F7F;&#x7528;&#x5230;&#x4E86;&#x534F;&#x7A0B;&#xFF0C;go&#x7684;&#x9AD8;&#x6548;&#x5C31;&#x4E0D;&#x518D;&#x7EC6;&#x8BF4;&#x4E86;&#xFF0C;&#x90A3;&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;&#x4E86;&#x534F;&#x7A0B;&#x4F1A;&#x8BA9;&#x6211;&#x4EEC;&#x7684;&#x540E;&#x53F0;&#x7A0B;&#x5E8F;&#x53D8;&#x5F97;&#x9AD8;&#x6548;&#x5462;&#xFF1F;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5FC3;&#x91CC;&#x6709;&#x8FD9;&#x4E9B;&#x7591;&#x95EE;&#xFF0C;&#x90A3;&#x4E48;&#x8BF7;&#x7EE7;&#x7EED;&#x9605;&#x8BFB;&#x672C;&#x4E66;&#x548C;&#x4E86;&#x89E3;&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x7684;&#x5F00;&#x6E90;&#x5E93;ntyco&#x3002;</p>
+<h2 id="&#x76EE;&#x5F55;">&#x76EE;&#x5F55;</h2>
+<ul>
+<li><a href="index.html">&#x524D;&#x8A00;</a></li>
+<li><a href="chapter1/1_0.html">&#x7B2C;&#x4E00;&#x7AE0; &#x534F;&#x7A0B;&#x7684;&#x8D77;&#x6E90;</a></li>
+<li><a href="chapter2/2_0.html">&#x7B2C;&#x4E8C;&#x7AE0; &#x534F;&#x7A0B;&#x7684;&#x6848;&#x4F8B;</a></li>
+<li><a href="chapter3/3_0.html">&#x7B2C;&#x4E09;&#x7AE0; &#x534F;&#x7A0B;&#x7684;&#x5B9E;&#x73B0;&#x4E4B;&#x5DE5;&#x4F5C;&#x539F;&#x7406;</a><ul>
+<li><a href="chapter3/3_1.html">&#x521B;&#x5EFA;&#x534F;&#x7A0B;</a></li>
+<li><a href="chapter3/3_2.html">&#x5B9E;&#x73B0;IO&#x5F02;&#x6B65;&#x64CD;&#x4F5C;</a></li>
+<li><a href="chapter3/3_3.html">&#x56DE;&#x8C03;&#x534F;&#x7A0B;&#x7684;&#x5B50;&#x64CD;&#x4F5C;</a></li>
+</ul>
+</li>
+<li><a href="chapter4/4_0.html">&#x7B2C;&#x56DB;&#x7AE0; &#x534F;&#x7A0B;&#x7684;&#x5B9E;&#x73B0;&#x4E4B;&#x539F;&#x8BED;&#x64CD;&#x4F5C;</a></li>
+<li><a href="chapter5/5_0.html">&#x7B2C;&#x4E94;&#x7AE0; &#x534F;&#x7A0B;&#x5B9E;&#x73B0;&#x4E4B;&#x5207;&#x6362;</a></li>
+<li><a href="chapter6/6_0.html">&#x7B2C;&#x516D;&#x7AE0; &#x534F;&#x7A0B;&#x5B9E;&#x73B0;&#x4E4B;&#x5B9A;&#x4E49;</a><ul>
+<li><a href="chapter6/6_1.html">&#x8FD0;&#x884C;&#x4F53;&#x9AD8;&#x6548;&#x5207;&#x6362;</a></li>
+<li><a href="chapter6/6_2.html">&#x8C03;&#x5EA6;&#x5668;&#x4E0E;&#x534F;&#x7A0B;&#x7684;&#x529F;&#x80FD;&#x754C;&#x9650;</a></li>
+</ul>
+</li>
+<li><a href="chapter7/7_0.html">&#x7B2C;&#x4E03;&#x7AE0; &#x534F;&#x7A0B;&#x5B9E;&#x73B0;&#x4E4B;&#x8C03;&#x5EA6;&#x5668;</a><ul>
+<li><a href="chapter7/7_1.html">&#x751F;&#x4EA7;&#x8005;&#x6D88;&#x8D39;&#x8005;&#x6A21;&#x5F0F;</a></li>
+<li><a href="chapter7/7_2.html">&#x591A;&#x72B6;&#x6001;&#x4E0B;&#x8FD0;&#x884C;</a></li>
+</ul>
+</li>
+<li><a href="chapter8/8_0.html">&#x7B2C;&#x516B;&#x7AE0; &#x534F;&#x7A0B;&#x6027;&#x80FD;&#x6D4B;&#x8BD5;</a></li>
+<li><a href="chapter9/9_0.html">&#x7B2C;&#x4E5D;&#x7AE0; &#x534F;&#x7A0B;&#x591A;&#x6838;&#x6A21;&#x5F0F;</a></li>
+</ul>
+<h2 id="&#x9E23;&#x8C22;">&#x9E23;&#x8C22;</h2>
+<p>&#x5728;&#x6B64;&#x8981;&#x7279;&#x522B;&#x611F;&#x8C22;&#x6211;&#x4EEC;&#x7684;&#x56E2;&#x961F;&#x7684;&#x6BCF;&#x4E00;&#x4F4D;&#x6210;&#x5458;&#x7684;&#x52AA;&#x529B;&#xFF0C;&#x4E5F;&#x7279;&#x522B;&#x611F;&#x8C22;&#x80CC;&#x540E;&#x9ED8;&#x9ED8;&#x652F;&#x6301;&#x6211;&#x4EEC;&#x7684;&#x5BB6;&#x4EBA;&#x4EEC;&#x3002;&#x5982;&#x679C;&#x4F60;&#x6709;&#x4EFB;&#x4F55;&#x7591;&#x95EE;&#xFF0C;&#x6216;&#x8005;&#x60F3;&#x548C;&#x6211;&#x4EEC;&#x63A2;&#x8BA8;&#x6280;&#x672F;&#x8BF7;&#x8054;&#x7CFB;&#x6211;&#x4EEC;&#xFF1A;</p>
+<p>email: 1989wangbojing@163.com<br>email: lizhiyong4360@gmail.com<br>email: 592407834@qq.com<br>qq&#x7FA4;: 829348971</p>
+
+                    
+                    </section>
+                
+                
+                </div>
             </div>
+        </div>
 
-            
-                
-                
-                <a href="chapter1/1_0.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 第一章 协程的起源">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
+        
+        
+        <a href="./charpter0/index.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 前言"><i class="fa fa-angle-right"></i></a>
         
     </div>
-
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"前言","level":"1.1","depth":1,"next":{"title":"第一章 协程的起源","level":"1.2","depth":1,"path":"chapter1/1_0.md","ref":"chapter1/1_0.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2018-09-30T02:42:09.188Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-30T06:23:19.729Z"},"basePath":".","book":{"language":""}});
-        });
-    </script>
 </div>
 
         
-    <script src="gitbook/gitbook.js"></script>
-    <script src="gitbook/theme.js"></script>
+<script src="gitbook/app.js"></script>
+
     
-        
-        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
     
 
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
     </body>
+    
 </html>
-

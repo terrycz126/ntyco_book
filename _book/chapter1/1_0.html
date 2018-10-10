@@ -1,460 +1,548 @@
-
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="en" >
+    
     <head>
+        
         <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第一章 协程的起源 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>第一章 协程的起源 | 协程</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="generator" content="GitBook 2.6.7">
         
         
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
         
-    
     <link rel="stylesheet" href="../gitbook/style.css">
-
     
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
         
-
-    
-
-    
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
         
     
         
-    
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
         
     
         
-    
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
         
     
-        
     
 
         
     
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-
     
     <link rel="next" href="../chapter2/2_0.html" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="../charpter0/index.html" />
     
 
+        
     </head>
     <body>
         
-<div class="book">
-    <div class="book-summary">
         
+    <div class="book"
+        data-level="2"
+        data-chapter-title="第一章 协程的起源"
+        data-filepath="chapter1/1_0.md"
+        data-basepath=".."
+        data-revision="Wed Oct 10 2018 15:56:02 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
             
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+            
+            
+                
+                <li>
+                    <a href="http://www.0voice.com" target="blank" class="custom-link">ntyTcp</a>
+                </li>
+            
+            
+
+            
+            <li class="divider"></li>
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="charpter0/index.html">
+            
+                
+                    <a href="../charpter0/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        前言
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2" data-path="chapter1/1_0.html">
+            
+                
+                    <a href="../chapter1/1_0.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        第一章 协程的起源
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="chapter2/2_0.html">
+            
+                
+                    <a href="../chapter2/2_0.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        第二章 协程的案例
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="chapter3/3_0.html">
+            
+                
+                    <a href="../chapter3/3_0.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        第三章 协程的实现之工作原理
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="chapter3/3_1.html">
+            
+                
+                    <a href="../chapter3/3_1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        创建协程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="chapter3/3_2.html">
+            
+                
+                    <a href="../chapter3/3_2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        实现IO异步操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="chapter3/3_3.html">
+            
+                
+                    <a href="../chapter3/3_3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        回调协程的子操作
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="chapter4/4_0.html">
+            
+                
+                    <a href="../chapter4/4_0.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        第四章 协程的实现之原语操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="chapter5/5_0.html">
+            
+                
+                    <a href="../chapter5/5_0.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        第五章 协程实现之切换
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="chapter6/6_0.html">
+            
+                
+                    <a href="../chapter6/6_0.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        第六章 协程实现之定义
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="chapter6/6_1.html">
+            
+                
+                    <a href="../chapter6/6_1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        运行体高效切换
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="chapter6/6_2.html">
+            
+                
+                    <a href="../chapter6/6_2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        调度器与协程的功能界限
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="chapter7/7_0.html">
+            
+                
+                    <a href="../chapter7/7_0.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        第七章 协程实现之调度器
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="chapter7/7_1.html">
+            
+                
+                    <a href="../chapter7/7_1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        生产者消费者模式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="chapter7/7_2.html">
+            
+                
+                    <a href="../chapter7/7_2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        多状态下运行
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="chapter8/8_0.html">
+            
+                
+                    <a href="../chapter8/8_0.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        第八章 协程性能测试
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="chapter9/9_0.html">
+            
+                
+                    <a href="../chapter9/9_0.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        第九章 协程多核模式
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
 </div>
 
-            
-                <nav role="navigation">
-                
-
-
-<ul class="summary">
-    
-    
-
-    
-
-    
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                    前言
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.2" data-path="1_0.html">
-            
-                <a href="1_0.html">
-            
-                    
-                    第一章 协程的起源
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" data-path="../chapter2/2_0.html">
-            
-                <a href="../chapter2/2_0.html">
-            
-                    
-                    第二章 协程的案例
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" data-path="../chapter3/3_0.html">
-            
-                <a href="../chapter3/3_0.html">
-            
-                    
-                    第三章 协程的实现之工作原理
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.4.1" data-path="../chapter3/3_1.html">
-            
-                <a href="../chapter3/3_1.html">
-            
-                    
-                    创建协程
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.2" data-path="../chapter3/3_2.html">
-            
-                <a href="../chapter3/3_2.html">
-            
-                    
-                    实现IO异步操作
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.3" data-path="../chapter3/3_3.html">
-            
-                <a href="../chapter3/3_3.html">
-            
-                    
-                    回调协程的子操作
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="../chapter4/4_0.html">
-            
-                <a href="../chapter4/4_0.html">
-            
-                    
-                    第四章 协程的实现之原语操作
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6" data-path="../chapter5/5_0.html">
-            
-                <a href="../chapter5/5_0.html">
-            
-                    
-                    第五章 协程实现之切换
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7" data-path="../chapter6/6_0.html">
-            
-                <a href="../chapter6/6_0.html">
-            
-                    
-                    第六章 协程实现之定义
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.7.1" data-path="../chapter6/6_1.html">
-            
-                <a href="../chapter6/6_1.html">
-            
-                    
-                    运行体高效切换
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.2" data-path="../chapter6/6_2.html">
-            
-                <a href="../chapter6/6_2.html">
-            
-                    
-                    调度器与协程的功能界限
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8" data-path="../chapter7/7_0.html">
-            
-                <a href="../chapter7/7_0.html">
-            
-                    
-                    第七章 协程实现之调度器
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.8.1" data-path="../chapter7/7_1.html">
-            
-                <a href="../chapter7/7_1.html">
-            
-                    
-                    生产者消费者模式
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.2" data-path="../chapter7/7_2.html">
-            
-                <a href="../chapter7/7_2.html">
-            
-                    
-                    多状态下运行
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9" data-path="../chapter8/8_0.html">
-            
-                <a href="../chapter8/8_0.html">
-            
-                    
-                    第八章 协程性能测试
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.10" data-path="../chapter9/9_0.html">
-            
-                <a href="../chapter9/9_0.html">
-            
-                    
-                    第九章 协程多核模式
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
-        </a>
-    </li>
-</ul>
-
-
-                </nav>
-            
-        
-    </div>
-
     <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
-
-<div class="book-header" role="navigation">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
     
 
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >第一章 协程的起源</a>
+        <a href="../" >协程</a>
     </h1>
 </div>
 
-
-
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <h1 id="&#x7B2C;&#x4E00;&#x7AE0;-&#x534F;&#x7A0B;&#x7684;&#x8D77;&#x6E90;">&#x7B2C;&#x4E00;&#x7AE0; &#x534F;&#x7A0B;&#x7684;&#x8D77;&#x6E90;</h1>
-
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
-</div>
-
-                        </div>
-                    </div>
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
                 
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x7B2C;&#x4E00;&#x7AE0;-&#x534F;&#x7A0B;&#x7684;&#x8D77;&#x6E90;">&#x7B2C;&#x4E00;&#x7AE0; &#x534F;&#x7A0B;&#x7684;&#x8D77;&#x6E90;</h1>
+<p>&#x2003;&#x2003;<strong>&#x95EE;&#x9898;&#xFF1A;&#x534F;&#x7A0B;&#x5B58;&#x5728;&#x7684;&#x539F;&#x56E0;&#xFF1F;&#x534F;&#x7A0B;&#x80FD;&#x591F;&#x89E3;&#x51B3;&#x54EA;&#x4E9B;&#x95EE;&#x9898;&#xFF1F;</strong></p>
+<p>&#x2003;&#x2003;&#x5728;&#x6211;&#x4EEC;&#x73B0;&#x5728;CS&#xFF0C;BS&#x5F00;&#x53D1;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7684;&#x541E;&#x5410;&#x91CF;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x91CD;&#x8981;&#x7684;&#x53C2;&#x6570;&#x3002;&#x5176;&#x5B9E;&#x541E;&#x5410;&#x91CF;&#x662F;IO&#x5904;&#x7406;&#x65F6;&#x95F4;&#x52A0;&#x4E0A;&#x4E1A;&#x52A1;&#x5904;&#x7406;&#x3002;&#x4E3A;&#x4E86;&#x7B80;&#x5355;&#x8D77;&#x89C1;&#xFF0C;&#x6BD4;&#x5982;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x4E4B;&#x95F4;&#x662F;&#x957F;&#x8FDE;&#x63A5;&#x7684;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x5B9A;&#x671F;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;&#x5FC3;&#x8DF3;&#x5305;&#x6570;&#x636E;&#x3002;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x4E00;&#x6B21;&#x5FC3;&#x8DF3;&#x5305;&#x5230;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x66F4;&#x65B0;&#x8BE5;&#x65B0;&#x5BA2;&#x6237;&#x7AEF;&#x72B6;&#x6001;&#x7684;&#x3002;&#x5FC3;&#x8DF3;&#x5305;&#x53D1;&#x9001;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x4E1A;&#x52A1;&#x5904;&#x7406;&#x65F6;&#x957F;&#x7B49;&#x4E8E;IO&#x8BFB;&#x53D6;&#xFF08;RECV&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#xFF09;&#x52A0;&#x4E0A;&#x4E1A;&#x52A1;&#x5904;&#x7406;&#xFF08;&#x66F4;&#x65B0;&#x5BA2;&#x6237;&#x72B6;&#x6001;&#xFF09;&#x3002;&#x541E;&#x5410;&#x91CF;&#x7B49;&#x4E8E;1s&#x4E1A;&#x52A1;&#x5904;&#x7406;&#x6B21;&#x6570;&#x3002;
+<img src="../image/1_0.png" alt="&#x5904;&#x7406;&#x6D41;&#x7A0B;"></p>
+<p>&#x2003;&#x2003;&#x4E1A;&#x52A1;&#x5904;&#x7406;&#xFF08;&#x66F4;&#x65B0;&#x5BA2;&#x6237;&#x7AEF;&#x72B6;&#x6001;&#xFF09;&#x65F6;&#x95F4;&#xFF0C;&#x4E1A;&#x52A1;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x5904;&#x7406;&#x65F6;&#x95F4;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x4E0D;&#x505A;&#x8BA8;&#x8BBA;&#x3002;  </p>
+<p>&#x2003;&#x2003;&#x90A3;&#x5982;&#x4F55;&#x63D0;&#x5347;recv&#x7684;&#x6027;&#x80FD;&#x3002;&#x82E5;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;recv&#x7684;&#x6027;&#x80FD;&#x4E5F;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x63D0;&#x5347;&#xFF0C;&#x4E5F;&#x4E0D;&#x80FD;&#x63D0;&#x5347;&#x3002;&#x82E5;&#x5728;&#x6709;&#x767E;&#x4E07;&#x8BA1;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x957F;&#x8FDE;&#x63A5;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x6211;&#x4EEC;&#x8BE5;&#x5982;&#x4F55;&#x63D0;&#x5347;&#x3002;&#x4EE5;Linux&#x4E3A;&#x4F8B;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x4ECB;&#x7ECD;&#x4E00;&#x4E2A;&#x201C;&#x7F51;&#x7EA2;&#x201D;&#x5C31;&#x662F;epoll&#x3002;&#x670D;&#x52A1;&#x5668;&#x4F7F;&#x7528;epoll&#x7BA1;&#x7406;&#x767E;&#x4E07;&#x8BA1;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x957F;&#x8FDE;&#x63A5;&#xFF0C;&#x4EE3;&#x7801;&#x6846;&#x67B6;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>while (1) {
+    int nready = epoll_wait(epfd, events, EVENT_SIZE, -1);
+
+    for (i = 0;i &lt; nready;i ++) {
+
+        int sockfd = events[i].data.fd;
+        if (sockfd == listenfd) {
+            int connfd = accept(listenfd, xxx, xxxx);
+
+            setnonblock(connfd);
+
+            ev.events = EPOLLIN | EPOLLET;
+            ev.data.fd = connfd;
+            epoll_ctl(epfd, EPOLL_CTL_ADD, connfd, &amp;ev);
+
+        } else {
+            handle(sockfd);
+        }
+    }
+}
+</code></pre><p>&#x2003;&#x2003;&#x5BF9;&#x4E8E;&#x54CD;&#x5E94;&#x5F0F;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x64CD;&#x4F5C;&#x9A71;&#x52A8;&#x90FD;&#x662F;&#x6765;&#x6E90;&#x4E8E;&#x8FD9;&#x4E2A;&#x5927;&#x5FAA;&#x73AF;&#x3002;&#x6765;&#x6E90;&#x4E8E;epoll_wait&#x7684;&#x53CD;&#x9988;&#x7ED3;&#x679C;&#x3002;
+&#x5BF9;&#x4E8E;&#x670D;&#x52A1;&#x5668;&#x5904;&#x7406;&#x767E;&#x4E07;&#x8BA1;&#x7684;IO&#x3002;Handle(sockfd)&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x6709;&#x4E24;&#x79CD;&#x3002;</p>
+<ul>
+<li>handle(sockfd)&#x51FD;&#x6570;&#x5185;&#x90E8;&#x5BF9;sockfd&#x8FDB;&#x884C;&#x8BFB;&#x5199;&#x52A8;&#x4F5C;   </li>
+</ul>
+<pre><code>int handle(int sockfd) {
+
+    recv(sockfd, rbuffer, length, 0);
+
+    parser_proto(rbuffer, length);
+
+    send(sockfd, sbuffer, length, 0);
+
+}
+</code></pre><ul>
+<li><p>handle&#x7684;io&#x64CD;&#x4F5C;&#xFF08;send,recv&#xFF09;&#x4E0E;epoll_wait&#x662F;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5904;&#x7406;&#x6D41;&#x7A0B;&#x91CC;&#x9762;&#x7684;&#x3002;&#x8FD9;&#x5C31;&#x662F;IO&#x540C;&#x6B65;&#x64CD;&#x4F5C;&#x3002;<br>&#x4F18;&#x70B9;&#xFF1A;<br>1.sockfd&#x7BA1;&#x7406;&#x65B9;&#x4FBF;&#x3002;<br>2.&#x64CD;&#x4F5C;&#x903B;&#x8F91;&#x6E05;&#x6670;&#x3002;<br>&#x7F3A;&#x70B9;&#xFF1A;<br>1.&#x670D;&#x52A1;&#x5668;&#x7A0B;&#x5E8F;&#x4F9D;&#x8D56;epoll_wait&#x7684;&#x5FAA;&#x73AF;&#x54CD;&#x5E94;&#x901F;&#x5EA6;&#x6162;&#x3002;<br>2.&#x7A0B;&#x5E8F;&#x6027;&#x80FD;&#x5DEE;  </p>
+</li>
+<li><p>handle(sockfd)&#x51FD;&#x6570;&#x5185;&#x90E8;&#x5C06;sockfd&#x7684;&#x64CD;&#x4F5C;&#xFF0C;push&#x5230;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;:  </p>
+</li>
+</ul>
+<pre><code>int thread_cb(int sockfd) {
+    // &#x6B64;&#x51FD;&#x6570;&#x662F;&#x5728;&#x7EBF;&#x7A0B;&#x6C60;&#x521B;&#x5EFA;&#x7684;&#x7EBF;&#x7A0B;&#x4E2D;&#x8FD0;&#x884C;&#x3002;
+    // &#x4E0E;handle&#x4E0D;&#x5728;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x8FD0;&#x884C;
+    recv(sockfd, rbuffer, length, 0);
+    parser_proto(rbuffer, length);
+    send(sockfd, sbuffer, length, 0);
+}
+
+int handle(int sockfd) {
+    //&#x6B64;&#x51FD;&#x6570;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B; main_thread &#x4E2D;&#x8FD0;&#x884C;
+    //&#x5728;&#x6B64;&#x5904;&#x4E4B;&#x524D;&#xFF0C;&#x786E;&#x4FDD;&#x7EBF;&#x7A0B;&#x6C60;&#x5DF2;&#x7ECF;&#x542F;&#x52A8;&#x3002;
+    push_thread(sockfd, thread_cb); //&#x5C06;sockfd&#x653E;&#x5230;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x4E2D;&#x8FD0;&#x884C;&#x3002;
+}
+</code></pre><p>&#x2003;&#x2003;Handle&#x51FD;&#x6570;&#x662F;&#x5C06;sockfd&#x5904;&#x7406;&#x65B9;&#x5F0F;&#x653E;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x5176;&#x4ED6;&#x7684;&#x7EBF;&#x7A0B;&#x4E2D;&#x8FD0;&#x884C;&#xFF0C;&#x5982;&#x6B64;&#x505A;&#x6CD5;&#xFF0C;&#x5C06;io&#x64CD;&#x4F5C;&#xFF08;recv&#xFF0C;send&#xFF09;&#x4E0E;epoll_wait &#x4E0D;&#x5728;&#x4E00;&#x4E2A;&#x5904;&#x7406;&#x6D41;&#x7A0B;&#x91CC;&#x9762;&#xFF0C;&#x4F7F;&#x5F97;io&#x64CD;&#x4F5C;&#xFF08;recv,send&#xFF09;&#x4E0E;epoll_wait&#x5B9E;&#x73B0;&#x89E3;&#x8026;&#x3002;&#x8FD9;&#x5C31;&#x53EB;&#x505A;IO&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x3002;<br>&#x4F18;&#x70B9;&#xFF1A;<br>1.&#x5B50;&#x6A21;&#x5757;&#x597D;&#x89C4;&#x5212;&#x3002;<br>2.&#x7A0B;&#x5E8F;&#x6027;&#x80FD;&#x9AD8;&#x3002;<br>&#x7F3A;&#x70B9;&#xFF1A;<br>&#x6B63;&#x56E0;&#x4E3A;&#x5B50;&#x6A21;&#x5757;&#x597D;&#x89C4;&#x5212;&#xFF0C;&#x4F7F;&#x5F97;&#x6A21;&#x5757;&#x4E4B;&#x95F4;&#x7684;sockfd&#x7684;&#x7BA1;&#x7406;&#x5F02;&#x5E38;&#x9EBB;&#x70E6;&#x3002;&#x6BCF;&#x4E00;&#x4E2A;&#x5B50;&#x7EBF;&#x7A0B;&#x90FD;&#x9700;&#x8981;&#x7BA1;&#x7406;&#x597D;sockfd&#xFF0C;&#x907F;&#x514D;&#x5728;IO&#x64CD;&#x4F5C;&#x7684;&#x65F6;&#x5019;&#xFF0C;sockfd&#x51FA;&#x73B0;&#x5173;&#x95ED;&#x6216;&#x5176;&#x4ED6;&#x5F02;&#x5E38;&#x3002;</p>
+<p>&#x2003;&#x2003;<strong>&#x4E0A;&#x6587;&#x6709;&#x63D0;&#x5230;IO&#x540C;&#x6B65;&#x64CD;&#x4F5C;&#xFF0C;&#x7A0B;&#x5E8F;&#x54CD;&#x5E94;&#x6162;&#xFF0C;IO&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#xFF0C;&#x7A0B;&#x5E8F;&#x54CD;&#x5E94;&#x5FEB;&#x3002;</strong></p>
+<p>&#x2003;&#x2003;&#x4E0B;&#x9762;&#x6765;&#x5BF9;&#x6BD4;&#x4E00;&#x4E0B;IO&#x540C;&#x6B65;&#x64CD;&#x4F5C;&#x4E0E;IO&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;
+<a href="https://github.com/wangbojing/c1000k_test/blob/master/server_mulport_epoll.c" target="_blank">server_mulport_epool.c</a>
+&#x2003;&#x2003;&#x5728;&#x8FD9;&#x4EFD;&#x4EE3;&#x7801;&#x7684;486&#x884C;&#xFF0C;#if 1, &#x6253;&#x5F00;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E3A;IO&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x3002;&#x5173;&#x95ED;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E3A;IO&#x540C;&#x6B65;&#x64CD;&#x4F5C;&#x3002;
+<img src="../image/1_2.png" alt="git"></p>
+<p>&#x2003;&#x2003;&#x63A5;&#x4E0B;&#x6765;&#x628A;&#x6211;&#x6D4B;&#x8BD5;&#x63A5;&#x5165;&#x91CF;&#x7684;&#x7ED3;&#x679C;&#x7C98;&#x8D34;&#x51FA;&#x6765;&#x3002;
+IO&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#xFF0C;&#x6BCF;1000&#x4E2A;&#x8FDE;&#x63A5;&#x63A5;&#x5165;&#x7684;&#x670D;&#x52A1;&#x5668;&#x54CD;&#x5E94;&#x65F6;&#x95F4;&#xFF08;900ms&#x5DE6;&#x53F3;&#xFF09;&#x3002;
+<img src="../image/1_3.png" alt="git">
+IO&#x540C;&#x6B65;&#x64CD;&#x4F5C;&#xFF0C;&#x6BCF;1000&#x4E2A;&#x8FDE;&#x63A5;&#x63A5;&#x5165;&#x7684;&#x670D;&#x52A1;&#x5668;&#x54CD;&#x5E94;&#x65F6;&#x95F4;&#xFF08;6500ms&#x5DE6;&#x53F3;&#xFF09;&#x3002;
+<img src="../image/1_4.png" alt="git">
+epoll&#x7684;IO&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x4E0E;IO&#x540C;&#x6B65;&#x64CD;&#x4F5C;&#x6BD4;&#x8F83;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<table>
+<thead>
+<tr>
+<th>&#x5BF9;&#x6BD4;&#x9879;</th>
+<th>IO&#x540C;&#x6B65;&#x64CD;&#x4F5C;</th>
+<th>IO&#x5F02;&#x6B65;&#x64CD;&#x4F5C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Socket&#x7BA1;&#x7406;</td>
+<td>&#x7BA1;&#x7406;&#x65B9;&#x4FBF;</td>
+<td>&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x5171;&#x540C;&#x7BA1;&#x7406;</td>
+</tr>
+<tr>
+<td> &#x4EE3;&#x7801;&#x903B;&#x8F91;</td>
+<td>&#x7A0B;&#x5E8F;&#x6574;&#x4F53;&#x903B;&#x8F91;&#x6E05;&#x6670;</td>
+<td>&#x5B50;&#x6A21;&#x5757;&#x903B;&#x8F91;&#x6E05;&#x6670;</td>
+</tr>
+<tr>
+<td> IO&#x6027;&#x80FD;</td>
+<td>&#x54CD;&#x5E94;&#x65F6;&#x95F4;&#x957F;&#xFF0C;&#x6027;&#x80FD;&#x5DEE;</td>
+<td>&#x54CD;&#x5E94;&#x65F6;&#x95F4;&#x77ED;&#xFF0C;&#x6027;&#x80FD;&#x597D;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x2003;&#x2003;&#x6709;&#x6CA1;&#x6709;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x6709;&#x5F02;&#x6B65;&#x6027;&#x80FD;&#xFF0C;&#x540C;&#x6B65;&#x7684;&#x4EE3;&#x7801;&#x903B;&#x8F91;&#x3002;&#x6765;&#x65B9;&#x4FBF;&#x7F16;&#x7A0B;&#x4EBA;&#x5458;&#x5BF9;IO&#x64CD;&#x4F5C;&#x7684;&#x7EC4;&#x4EF6;&#x5462;&#xFF1F; &#x6709;&#xFF0C;&#x91C7;&#x7528;&#x4E00;&#x79CD;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x534F;&#x7A0B;&#x6765;&#x5B9E;&#x73B0;&#x3002;&#x5728;&#x6BCF;&#x6B21;send&#x6216;&#x8005;recv&#x4E4B;&#x524D;&#x8FDB;&#x884C;&#x5207;&#x6362;&#xFF0C;&#x518D;&#x7531;&#x8C03;&#x5EA6;&#x5668;&#x6765;&#x5904;&#x7406;epoll_wait&#x7684;&#x6D41;&#x7A0B;&#x3002;
+&#x5C31;&#x662F;&#x91C7;&#x7528;&#x4E86;&#x57FA;&#x4E8E;&#x8FD9;&#x6837;&#x7684;&#x601D;&#x8003;&#xFF0C;&#x5199;&#x4E86;<a href="https://github.com/wangbojing/NtyCo" target="_blank">NtyCo</a>&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;IO&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x4E0E;&#x534F;&#x7A0B;&#x7ED3;&#x5408;&#x7684;&#x7EC4;&#x4EF6;&#x3002;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
             </div>
+        </div>
 
-            
-                
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: 前言">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="../chapter2/2_0.html" class="navigation navigation-next " aria-label="Next page: 第二章 协程的案例">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
+        
+        <a href="../charpter0/index.html" class="navigation navigation-prev " aria-label="Previous page: 前言"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../chapter2/2_0.html" class="navigation navigation-next " aria-label="Next page: 第二章 协程的案例"><i class="fa fa-angle-right"></i></a>
         
     </div>
-
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第一章 协程的起源","level":"1.2","depth":1,"next":{"title":"第二章 协程的案例","level":"1.3","depth":1,"path":"chapter2/2_0.md","ref":"chapter2/2_0.md","articles":[]},"previous":{"title":"前言","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter1/1_0.md","mtime":"2018-09-30T03:56:39.316Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-30T06:23:19.729Z"},"basePath":"..","book":{"language":""}});
-        });
-    </script>
 </div>
 
         
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
+<script src="../gitbook/app.js"></script>
+
     
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
     
 
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
     </body>
+    
 </html>
-
