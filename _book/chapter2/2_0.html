@@ -53,7 +53,7 @@
         data-chapter-title="第二章 协程的案例"
         data-filepath="chapter2/2_0.md"
         data-basepath=".."
-        data-revision="Wed Oct 10 2018 15:56:02 GMT+0800 (CST)"
+        data-revision="Thu Oct 11 2018 23:41:38 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -396,6 +396,65 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="&#x7B2C;&#x4E8C;&#x7AE0;-&#x534F;&#x7A0B;&#x7684;&#x6848;&#x4F8B;">&#x7B2C;&#x4E8C;&#x7AE0; &#x534F;&#x7A0B;&#x7684;&#x6848;&#x4F8B;</h1>
+<p>&#x2003;&#x2003;<strong>&#x95EE;&#x9898;&#xFF1A;&#x534F;&#x7A0B;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#xFF1F;&#x4E0E;&#x7EBF;&#x7A0B;&#x4F7F;&#x7528;&#x6709;&#x4F55;&#x533A;&#x522B;&#xFF1F;</strong></p>
+<p>&#x2003;&#x2003;&#x5728;&#x505A;&#x7F51;&#x7EDC;IO&#x7F16;&#x7A0B;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x7406;&#x60F3;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5C31;&#x662F;&#x6BCF;&#x6B21;accept&#x8FD4;&#x56DE;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x4E3A;&#x65B0;&#x6765;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x3002;&#x5C31;&#x4E0D;&#x4F1A;&#x6709;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x5171;&#x7528;&#x4E00;&#x4E2A;sockfd&#x3002;&#x6BCF;&#x8BF7;&#x6C42;&#x6BCF;&#x7EBF;&#x7A0B;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5E76;&#x4E14;&#x4EE3;&#x7801;&#x903B;&#x8F91;&#x975E;&#x5E38;&#x6613;&#x8BFB;&#x3002;&#x4F46;&#x662F;&#x8FD9;&#x53EA;&#x662F;&#x7406;&#x60F3;&#xFF0C;&#x7EBF;&#x7A0B;&#x521B;&#x5EFA;&#x4EE3;&#x4EF7;&#xFF0C;&#x8C03;&#x5EA6;&#x4EE3;&#x4EF7;&#x5C31;&#x5475;&#x5475;&#x4E86;&#x3002;
+&#x5148;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x6BCF;&#x8BF7;&#x6C42;&#x6BCF;&#x7EBF;&#x7A0B;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>while (1) {
+    int nfds = epoll_wait(epoll_fd, events, curfds, -1);
+    if (nfds == -1) {
+        perror(&quot;epoll_wait&quot;);
+        break;
+    }
+
+    for (i = 0;i &lt; nfds;i ++) {
+        int sockfd = listenfd(events[i].data.fd, sockfds);
+        if (sockfd) {
+            socklen_t len = sizeof(struct sockaddr_in);
+            int clientfd = accept(sockfd, (struct sockaddr*)&amp;remote, &amp;len);
+
+            pthread_t thread_id;
+            pthread_create(&amp;thread_id, NULL, client_cb, &amp;clientfd);
+        }
+        else
+        {
+            ...
+        }
+}
+</code></pre><p>&#x2003;&#x2003;&#x8FD9;&#x6837;&#x7684;&#x505A;&#x6CD5;&#xFF0C;&#x5199;&#x5B8C;&#x653E;&#x5230;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E0B;&#x9762;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x7684;&#x8001;&#x677F;&#x4E0D;&#x6253;&#x6B7B;&#x4F60;&#xFF0C;&#x4F60;&#x6765;&#x627E;&#x6211;&#x3002;&#x6211;&#x6765;&#x5E2E;&#x4F60;&#x8001;&#x677F;&#xFF0C;&#x4E3A;&#x6C11;&#x9664;&#x5BB3;&#x3002;<br>&#x2003;&#x2003;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x6709;&#x534F;&#x7A0B;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5B9E;&#x73B0;&#x3002;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;<br>&#x2003;&#x2003;<a href="https://github.com/wangbojing/NtyCo/blob/master/nty_server_test.c" target="_blank">https://github.com/wangbojing/NtyCo/blob/master/nty_server_test.c</a></p>
+<pre><code>while (1) {
+    int nfds = epoll_wait(epoll_fd, events, curfds, -1);
+    if (nfds == -1) {
+        perror(&quot;epoll_wait&quot;);
+        break;
+    }
+
+    for (i = 0;i &lt; nfds;i ++) {
+        int sockfd = listenfd(events[i].data.fd, sockfds);
+        if (sockfd) {
+            socklen_t len = sizeof(struct sockaddr_in);
+            int clientfd = accept(sockfd, (struct sockaddr*)&amp;remote, &amp;len);
+
+            nty_coroutine *read_co;
+            nty_coroutine_create(&amp;read_co, server_reader, &amp;clientfd);
+        }
+        else
+        {
+            ...
+        }
+}
+</code></pre><p>&#x2003;&#x2003;&#x8FD9;&#x6837;&#x7684;&#x4EE3;&#x7801;&#x662F;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x653E;&#x5728;&#x751F;&#x6210;&#x73AF;&#x5883;&#x4E0B;&#x9762;&#x7684;&#x3002;&#x5982;&#x679C;&#x4F60;&#x7684;&#x8001;&#x677F;&#x8981;&#x6253;&#x6B7B;&#x4F60;&#xFF0C;&#x4F60;&#x6765;&#x627E;&#x6211;&#xFF0C;&#x6211;&#x5E2E;&#x4F60;&#x628A;&#x4F60;&#x8001;&#x677F;&#x6253;&#x6B7B;&#xFF0C;&#x4E3A;&#x6C11;&#x9664;&#x5BB3;&#x3002;<br>&#x2003;&#x2003;<strong>&#x7EBF;&#x7A0B;&#x7684;API&#x601D;&#x7EF4;&#x6765;&#x4F7F;&#x7528;&#x534F;&#x7A0B;&#xFF0C;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x7684;&#x6027;&#x80FD;&#x6765;&#x6D4B;&#x8BD5;&#x534F;&#x7A0B;&#x3002;</strong><br>&#x2003;&#x2003;NtyCo&#x5C01;&#x88C5;&#x51FA;&#x6765;&#x4E86;&#x82E5;&#x5E72;&#x63A5;&#x53E3;&#xFF0C;&#x4E00;&#x7C7B;&#x662F;&#x534F;&#x7A0B;&#x672C;&#x8EAB;&#x7684;&#xFF0C;&#x4E8C;&#x7C7B;&#x662F;posix&#x7684;&#x5F02;&#x6B65;&#x5C01;&#x88C5;<br>&#x2003;&#x2003;&#x534F;&#x7A0B;API&#xFF1A;  </p>
+<ol>
+<li>&#x534F;&#x7A0B;&#x521B;&#x5EFA;  <pre><code>int nty_coroutine_create(nty_coroutine **new_co, proc_coroutine func, void *arg)
+</code></pre></li>
+<li>&#x534F;&#x7A0B;&#x8C03;&#x5EA6;&#x5668;&#x7684;&#x8FD0;&#x884C;  <pre><code>void nty_schedule_run(void)
+</code></pre></li>
+<li>POSIX&#x5F02;&#x6B65;&#x5C01;&#x88C5;API&#xFF1A;  <pre><code>int nty_socket(int domain, int type, int protocol)
+int nty_accept(int fd, struct sockaddr *addr, socklen_t *len)
+int nty_recv(int fd, void *buf, int length)
+int nty_send(int fd, const void *buf, int length)
+int nty_close(int fd)
+</code></pre>&#x63A5;&#x53E3;&#x683C;&#x5F0F;&#x4E0E;POSIX&#x6807;&#x51C6;&#x7684;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x4E00;&#x81F4;&#x3002;</li>
+</ol>
 
                     
                     </section>
