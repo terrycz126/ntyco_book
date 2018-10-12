@@ -53,7 +53,7 @@
         data-chapter-title="协程实现之定义"
         data-filepath="chapter6/6_0.md"
         data-basepath=".."
-        data-revision="Fri Oct 12 2018 15:56:12 GMT+0800 (CST)"
+        data-revision="Fri Oct 12 2018 17:27:32 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -272,8 +272,69 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x534F;&#x7A0B;&#x5B9E;&#x73B0;&#x4E4B;&#x5B9A;&#x4E49;">&#x534F;&#x7A0B;&#x5B9E;&#x73B0;&#x4E4B;&#x5B9A;&#x4E49;</h1>
+                        <h1 id="6&#x534F;&#x7A0B;&#x5B9E;&#x73B0;&#x4E4B;&#x5B9A;&#x4E49;">6.&#x534F;&#x7A0B;&#x5B9E;&#x73B0;&#x4E4B;&#x5B9A;&#x4E49;</h1>
+<ul>
+<li><a href="#1">&#x524D;&#x8A00;</a></li>
+<li><a href="#2">6.1.&#x8FD0;&#x884C;&#x4F53;&#x5982;&#x4F55;&#x9AD8;&#x6548;&#x5730;&#x5728;&#x591A;&#x79CD;&#x72B6;&#x6001;&#x96C6;&#x5408;&#x66F4;&#x6362;</a></li>
+<li><a href="#3">6.2.&#x8C03;&#x5EA6;&#x5668;&#x4E0E;&#x534F;&#x7A0B;&#x7684;&#x529F;&#x80FD;&#x754C;&#x9650;</a></li>
+</ul>
+<p></p><h3 id="1">&#x524D;&#x8A00;</h3>
+&#x2003;&#x2003;<strong>&#x95EE;&#x9898;&#xFF1A;&#x534F;&#x7A0B;&#x5982;&#x4F55;&#x5B9A;&#x4E49;? &#x8C03;&#x5EA6;&#x5668;&#x5982;&#x4F55;&#x5B9A;&#x4E49;&#xFF1F;</strong><br>&#x2003;&#x2003;&#x5148;&#x6765;&#x4E00;&#x9053;&#x8BBE;&#x8BA1;&#x9898;&#xFF1A;<br>&#x2003;&#x2003;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x534F;&#x7A0B;&#x7684;&#x8FD0;&#x884C;&#x4F53;R&#x4E0E;&#x8FD0;&#x884C;&#x4F53;&#x8C03;&#x5EA6;&#x5668;S&#x7684;&#x7ED3;&#x6784;&#x4F53;<br>&#x2003;&#x2003;1. &#x8FD0;&#x884C;&#x4F53;R&#xFF1A;&#x5305;&#x542B;&#x8FD0;&#x884C;&#x72B6;&#x6001;{&#x5C31;&#x7EEA;&#xFF0C;&#x7761;&#x7720;&#xFF0C;&#x7B49;&#x5F85;}&#xFF0C;&#x8FD0;&#x884C;&#x4F53;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x56DE;&#x8C03;&#x53C2;&#x6570;&#xFF0C;&#x6808;&#x6307;&#x9488;&#xFF0C;&#x6808;&#x5927;&#x5C0F;&#xFF0C;&#x5F53;&#x524D;&#x8FD0;&#x884C;&#x4F53;<br>&#x2003;&#x2003;2. &#x8C03;&#x5EA6;&#x5668;S&#xFF1A;&#x5305;&#x542B;&#x6267;&#x884C;&#x96C6;&#x5408;{&#x5C31;&#x7EEA;&#xFF0C;&#x7761;&#x7720;&#xFF0C;&#x7B49;&#x5F85;}<br>&#x2003;&#x2003;&#x8FD9;&#x9053;&#x8BBE;&#x8BA1;&#x9898;&#x62C6;&#x5206;&#x4E24;&#x4E2A;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x4E00;&#x4E2A;&#x8FD0;&#x884C;&#x4F53;&#x5982;&#x4F55;&#x9AD8;&#x6548;&#x5730;&#x5728;&#x591A;&#x79CD;&#x72B6;&#x6001;&#x96C6;&#x5408;&#x66F4;&#x6362;&#x3002;&#x8C03;&#x5EA6;&#x5668;&#x4E0E;&#x8FD0;&#x884C;&#x4F53;&#x7684;&#x529F;&#x80FD;&#x754C;&#x9650;&#x3002;<p></p>
+<p></p><h3 id="2">6.1.&#x8FD0;&#x884C;&#x4F53;&#x5982;&#x4F55;&#x9AD8;&#x6548;&#x5730;&#x5728;&#x591A;&#x79CD;&#x72B6;&#x6001;&#x96C6;&#x5408;&#x66F4;&#x6362;</h3><br>&#x2003;&#x2003;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x534F;&#x7A0B;&#xFF0C;&#x521B;&#x5EFA;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x52A0;&#x5165;&#x5230;&#x5C31;&#x7EEA;&#x96C6;&#x5408;&#xFF0C;&#x7B49;&#x5F85;&#x8C03;&#x5EA6;&#x5668;&#x7684;&#x8C03;&#x5EA6;&#xFF1B;&#x534F;&#x7A0B;&#x5728;&#x8FD0;&#x884C;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x8FDB;&#x884C;IO&#x64CD;&#x4F5C;&#xFF0C;&#x6B64;&#x65F6;IO&#x5E76;&#x672A;&#x51C6;&#x5907;&#x597D;&#xFF0C;&#x8FDB;&#x5165;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#x96C6;&#x5408;&#xFF1B;IO&#x51C6;&#x5907;&#x5C31;&#x7EEA;&#xFF0C;&#x534F;&#x7A0B;&#x5F00;&#x59CB;&#x8FD0;&#x884C;&#xFF0C;&#x540E;&#x7EED;&#x8FDB;&#x884C;sleep&#x64CD;&#x4F5C;&#xFF0C;&#x6B64;&#x65F6;&#x8FDB;&#x5165;&#x5230;&#x7761;&#x7720;&#x72B6;&#x6001;&#x96C6;&#x5408;&#x3002;<br>&#x2003;&#x2003;&#x5C31;&#x7EEA;(ready)&#xFF0C;&#x7761;&#x7720;(sleep)&#xFF0C;&#x7B49;&#x5F85;(wait)&#x96C6;&#x5408;&#x8BE5;&#x91C7;&#x7528;&#x5982;&#x4F55;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x6765;&#x5B58;&#x50A8;&#xFF1F;<br>&#x2003;&#x2003;&#x5C31;&#x7EEA;(ready)&#x96C6;&#x5408;&#x5E76;&#x4E0D;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x4F18;&#x5148;&#x7EA7;&#x7684;&#x9009;&#x578B;&#xFF0C;&#x6240;&#x6709;&#x5728;&#x534F;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;&#x4E00;&#x81F4;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x961F;&#x5217;&#x6765;&#x5B58;&#x50A8;&#x5C31;&#x7EEA;&#x7684;&#x534F;&#x7A0B;&#xFF0C;&#x7B80;&#x79F0;&#x4E3A;&#x5C31;&#x7EEA;&#x961F;&#x5217;&#xFF08;ready_queue&#xFF09;&#x3002;<br>&#x2003;&#x2003;&#x7761;&#x7720;(sleep)&#x96C6;&#x5408;&#x9700;&#x8981;&#x6309;&#x7167;&#x7761;&#x7720;&#x65F6;&#x957F;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x91C7;&#x7528;&#x7EA2;&#x9ED1;&#x6811;&#x6765;&#x5B58;&#x50A8;&#xFF0C;&#x7B80;&#x79F0;&#x7761;&#x7720;&#x6811;(sleep_tree)&#x7EA2;&#x9ED1;&#x6811;&#x5728;&#x5DE5;&#x7A0B;&#x5B9E;&#x7528;&#x4E3A;<key, value="">, key&#x4E3A;&#x7761;&#x7720;&#x65F6;&#x957F;&#xFF0C;value&#x4E3A;&#x5BF9;&#x5E94;&#x7684;&#x534F;&#x7A0B;&#x7ED3;&#x70B9;&#x3002;<br>&#x2003;&#x2003;&#x7B49;&#x5F85;(wait)&#x96C6;&#x5408;&#xFF0C;&#x5176;&#x529F;&#x80FD;&#x662F;&#x5728;&#x7B49;&#x5F85;IO&#x51C6;&#x5907;&#x5C31;&#x7EEA;&#xFF0C;&#x7B49;&#x5F85;IO&#x4E5F;&#x662F;&#x6709;&#x65F6;&#x957F;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x7B49;&#x5F85;(wait)&#x96C6;&#x5408;&#x91C7;&#x7528;&#x7EA2;&#x9ED1;&#x6811;&#x7684;&#x6765;&#x5B58;&#x50A8;&#xFF0C;&#x7B80;&#x79F0;&#x7B49;&#x5F85;&#x6811;(wait_tree)&#xFF0C;&#x6B64;&#x5904;&#x501F;&#x9274;nginx&#x7684;&#x8BBE;&#x8BA1;&#x3002;<p></p>
+<p>&#x2003;&#x2003;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;<br><img src="../image/7_1.png" alt="&#x8FD0;&#x884C;&#x4F53;&#x6570;&#x636E;&#x7ED3;&#x6784;"><br>&#x2003;&#x2003;Coroutine&#x5C31;&#x662F;&#x534F;&#x7A0B;&#x7684;&#x76F8;&#x5E94;&#x5C5E;&#x6027;&#xFF0C;status&#x8868;&#x793A;&#x534F;&#x7A0B;&#x7684;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#x3002;sleep&#x4E0E;wait&#x4E24;&#x9897;&#x7EA2;&#x9ED1;&#x6811;&#xFF0C;ready&#x4F7F;&#x7528;&#x7684;&#x961F;&#x5217;&#xFF0C;&#x6BD4;&#x5982;&#x67D0;&#x534F;&#x7A0B;&#x8C03;&#x7528;sleep&#x51FD;&#x6570;&#xFF0C;&#x52A0;&#x5165;&#x7761;&#x7720;&#x6811;(sleep_tree)&#xFF0C;status |= S&#x5373;&#x53EF;&#x3002;&#x6BD4;&#x5982;&#x67D0;&#x534F;&#x7A0B;&#x5728;&#x7B49;&#x5F85;&#x6811;(wait_tree)&#x4E2D;&#xFF0C;&#x800C;IO&#x51C6;&#x5907;&#x5C31;&#x7EEA;&#x653E;&#x5165;ready&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x79FB;&#x51FA;&#x7B49;&#x5F85;&#x6811;(wait_tree)&#xFF0C;&#x72B6;&#x6001;&#x66F4;&#x6539;status &amp;= ~W&#x5373;&#x53EF;&#x3002;&#x6709;&#x4E00;&#x4E2A;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x5C31;&#x662F;&#x4E0D;&#x7BA1;&#x4F55;&#x79CD;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#x7684;&#x534F;&#x7A0B;&#xFF0C;&#x90FD;&#x5728;&#x5C31;&#x7EEA;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x53EA;&#x662F;&#x540C;&#x65F6;&#x5305;&#x542B;&#x6709;&#x5176;&#x4ED6;&#x7684;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#x3002;</p>
+<p></p><h3 id="3">6.2.&#x8C03;&#x5EA6;&#x5668;&#x4E0E;&#x534F;&#x7A0B;&#x7684;&#x529F;&#x80FD;&#x754C;&#x9650;</h3>
+&#x2003;&#x2003;<strong>&#x6BCF;&#x4E00;&#x534F;&#x7A0B;&#x90FD;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7684;&#x800C;&#x4E14;&#x53EF;&#x80FD;&#x4F1A;&#x4E0D;&#x540C;&#x5C5E;&#x6027;&#x7684;&#xFF0C;&#x5C31;&#x662F;&#x534F;&#x7A0B;&#x5C5E;&#x6027;&#x3002;&#x6BCF;&#x4E00;&#x534F;&#x7A0B;&#x90FD;&#x9700;&#x8981;&#x7684;&#x800C;&#x4E14;&#x6570;&#x636E;&#x4E00;&#x81F4;&#x7684;&#xFF0C;&#x5C31;&#x662F;&#x8C03;&#x5EA6;&#x5668;&#x7684;&#x5C5E;&#x6027;&#x3002;</strong>&#x6BD4;&#x5982;&#x6808;&#x5927;&#x5C0F;&#x7684;&#x6570;&#x503C;&#xFF0C;&#x6BCF;&#x4E2A;&#x534F;&#x7A0B;&#x90FD;&#x4E00;&#x6837;&#x7684;&#x540E;&#x4E0D;&#x505A;&#x66F4;&#x6539;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x8C03;&#x5EA6;&#x5668;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5982;&#x679C;&#x6BCF;&#x4E2A;&#x534F;&#x7A0B;&#x5927;&#x5C0F;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x534F;&#x7A0B;&#x7684;&#x5C5E;&#x6027;&#x3002;<br>&#x2003;&#x2003;<strong>&#x7528;&#x6765;&#x7BA1;&#x7406;&#x6240;&#x6709;&#x534F;&#x7A0B;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x4F5C;&#x4E3A;&#x8C03;&#x5EA6;&#x5668;&#x7684;&#x5C5E;&#x6027;&#x3002;&#x6BD4;&#x5982;epoll&#x7528;&#x6765;&#x7BA1;&#x7406;&#x6BCF;&#x4E00;&#x4E2A;&#x534F;&#x7A0B;&#x5BF9;&#x5E94;&#x7684;IO&#xFF0C;&#x662F;&#x9700;&#x8981;&#x4F5C;&#x4E3A;&#x8C03;&#x5EA6;&#x5668;&#x5C5E;&#x6027;&#x3002;</strong>  <p></p>
+<p>&#x2003;&#x2003;&#x6309;&#x7167;&#x524D;&#x9762;&#x51E0;&#x7AE0;&#x7684;&#x63CF;&#x8FF0;&#xFF0C;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x534F;&#x7A0B;&#x7ED3;&#x6784;&#x4F53;&#x9700;&#x8981;&#x591A;&#x5C11;&#x57DF;&#xFF0C;&#x6211;&#x4EEC;&#x63CF;&#x8FF0;&#x4E86;&#x6BCF;&#x4E00;&#x4E2A;&#x534F;&#x7A0B;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x73AF;&#x5883;&#xFF0C;&#x9700;&#x8981;&#x4FDD;&#x5B58;CPU&#x7684;&#x5BC4;&#x5B58;&#x5668;ctx&#xFF1B;&#x9700;&#x8981;&#x6709;&#x5B50;&#x8FC7;&#x7A0B;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;func&#xFF1B;&#x9700;&#x8981;&#x6709;&#x5B50;&#x8FC7;&#x7A0B;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570; arg&#xFF1B;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x6808;&#x7A7A;&#x95F4; stack&#xFF1B;&#x9700;&#x8981;&#x6709;&#x81EA;&#x5DF1;&#x6808;&#x7A7A;&#x95F4;&#x7684;&#x5927;&#x5C0F; stack_size&#xFF1B;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x534F;&#x7A0B;&#x7684;&#x521B;&#x5EFA;&#x65F6;&#x95F4; birth&#xFF1B;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x534F;&#x7A0B;&#x5F53;&#x524D;&#x7684;&#x8FD0;&#x884C;&#x72B6;&#x6001; status&#xFF1B;&#x9700;&#x8981;&#x5B9A;&#x5F53;&#x524D;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#x7684;&#x7ED3;&#x70B9;&#xFF08;ready_next, wait_node, sleep_node&#xFF09;&#xFF1B;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x534F;&#x7A0B;id&#xFF1B;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x8C03;&#x5EA6;&#x5668;&#x7684;&#x5168;&#x5C40;&#x5BF9;&#x8C61; sched&#x3002;<br>&#x2003;&#x2003;&#x534F;&#x7A0B;&#x7684;&#x6838;&#x5FC3;&#x7ED3;&#x6784;&#x4F53;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>typedef struct _nty_coroutine {
 
+    nty_cpu_ctx ctx;
+    proc_coroutine func;
+    void *arg;
+    size_t stack_size;
+
+    nty_coroutine_status status;
+    nty_schedule *sched;
+
+    uint64_t birth;
+    uint64_t id;
+
+    void *stack;
+
+    RB_ENTRY(_nty_coroutine) sleep_node;
+    RB_ENTRY(_nty_coroutine) wait_node;
+
+    TAILQ_ENTRY(_nty_coroutine) ready_next;
+    TAILQ_ENTRY(_nty_coroutine) defer_next;
+
+} nty_coroutine;
+</code></pre><p>&#x2003;&#x2003;&#x8C03;&#x5EA6;&#x5668;&#x662F;&#x7BA1;&#x7406;&#x6240;&#x6709;&#x534F;&#x7A0B;&#x8FD0;&#x884C;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x534F;&#x7A0B;&#x4E0E;&#x8C03;&#x5EA6;&#x5668;&#x7684;&#x8FD0;&#x884C;&#x5173;&#x7CFB;&#x3002;</p>
+<p><img src="../image/7_2.png" alt="&#x534F;&#x7A0B;&#x7684;&#x8C03;&#x5EA6;"></p>
+<p>&#x2003;&#x2003;&#x8C03;&#x5EA6;&#x5668;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x9700;&#x8981;&#x6709;&#x4FDD;&#x5B58;CPU&#x7684;&#x5BC4;&#x5B58;&#x5668;&#x4E0A;&#x4E0B;&#x6587; ctx&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;&#x534F;&#x7A0B;&#x8FD0;&#x884C;&#x72B6;&#x6001;yield&#x5230;&#x8C03;&#x5EA6;&#x5668;&#x8FD0;&#x884C;&#x7684;&#x3002;&#x4ECE;&#x534F;&#x7A0B;&#x5230;&#x8C03;&#x5EA6;&#x5668;&#x7528;yield&#xFF0C;&#x4ECE;&#x8C03;&#x5EA6;&#x5668;&#x5230;&#x534F;&#x7A0B;&#x7528;resume&#x3002;<br>&#x2003;&#x2003;&#x4EE5;&#x4E0B;&#x4E3A;&#x534F;&#x7A0B;&#x7684;&#x5B9A;&#x4E49;&#x3002;</p>
+<pre><code>typedef struct _nty_coroutine_queue nty_coroutine_queue;
+
+typedef struct _nty_coroutine_rbtree_sleep nty_coroutine_rbtree_sleep;
+typedef struct _nty_coroutine_rbtree_wait nty_coroutine_rbtree_wait;
+
+typedef struct _nty_schedule {
+    uint64_t birth;
+nty_cpu_ctx ctx;
+
+    struct _nty_coroutine *curr_thread;
+    int page_size;
+
+    int poller_fd;
+    int eventfd;
+    struct epoll_event eventlist[NTY_CO_MAX_EVENTS];
+    int nevents;
+
+    int num_new_events;
+
+    nty_coroutine_queue ready;
+    nty_coroutine_rbtree_sleep sleeping;
+    nty_coroutine_rbtree_wait waiting;
+
+} nty_schedule;
+</code></pre></key,>
                     
                     </section>
                 
