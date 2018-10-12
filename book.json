@@ -13,5 +13,10 @@
             "ntyTcp": "http://www.0voice.com"
         }
     },
-    "pluginsConfig": {}
+    "pluginsConfig":  { 
+        "theme-default": {
+        "showLevel": false
+        }
+    }
+
 }
