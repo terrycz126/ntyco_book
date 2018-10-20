@@ -11,6 +11,13 @@
     "links": {
         "sidebar": {
             "ntyTcp": "http://www.0voice.com"
+        },
+	"sharing": {
+            "google": "fuck you gitbook",
+            "facebook": null,
+            "twitter": null,
+            "weibo": null,
+            "all": null
         }
     },
     "pluginsConfig":  { 

@@ -1,13 +1,19 @@
 # Summary
 
-* [前言](charpter0/README.md)
+* [前言](README.md)
 * [协程的起源](chapter1/1_0.md)
 * [协程的案例](chapter2/2_0.md)
 * [协程的实现之工作原理](chapter3/3_0.md)
+    * [创建协程](chapter3/3_0.md)
+    * [实现IO异步操作](chapter3/3_0.md)
+    * [回调协程的子操作](chapter3/3_0.md)
 * [协程的实现之原语操作](chapter4/4_0.md)
 * [协程实现之切换](chapter5/5_0.md)
 * [协程实现之定义](chapter6/6_0.md)
+    * [运行体高效切换](chapter6/6_0.md)
+    * [调度器与协程的功能界限](chapter6/6_0.md)
 * [协程实现之调度器](chapter7/7_0.md)
+    * [生产者消费者模式](chapter7/7_0.md)
+    * [多状态下运行](chapter7/7_0.md)
 * [协程性能测试](chapter8/8_0.md)
 * [协程多核模式](chapter9/9_0.md)
-
